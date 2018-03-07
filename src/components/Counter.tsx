@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
     container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
     counterText: { fontSize: 128, fontWeight: 'bold' },
     buttonContainer: { flexDirection: 'row' }
-})
+});

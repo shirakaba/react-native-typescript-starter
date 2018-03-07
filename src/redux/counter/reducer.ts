@@ -1,21 +1,34 @@
 import { INCREMENT, DECREMENT } from './types'
+import {CounterAction} from "./actions";
 
-const initialState = {
-    count: 0
-};
+// https://github.com/piotrwitek/react-redux-typescript-guide#typing-reducer
 
-export default function counterReducer(state = initialState, action) {
+// type CounterState = {
+//     readonly count: number;
+// }
+
+// interface AppState extends CounterState {
+//
+// }
+
+export type CountType = number;
+
+const initialState: number = 0;
+
+export default function counterReducer(state: CountType = initialState, action: CounterAction): CountType {
     switch (action.type) {
         case INCREMENT:
-            return {
-                ...state,
-                count: state.count + 1
-            }
+            // return {
+            //     ...state,
+            //     count: state.count + 1
+            // };
+            return state + 1;
         case DECREMENT:
-            return {
-                ...state,
-                count: state.count - 1
-            }
+            // return {
+            //     ...state,
+            //     count: state.count - 1
+            // };
+            return state - 1;
         default:
             return state;
     }

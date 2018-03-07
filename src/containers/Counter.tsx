@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import Counter from '../components/Counter';
 import * as CounterActions from '../redux/counter/actions';
 import { connect } from 'react-redux';
+import {CounterState} from "../redux";
 
 interface Props {
     count: number,
@@ -31,8 +32,11 @@ class CounterContainer extends Component<Props, {}> {
     }
 }
 
-export default connect(state => ({
-    count: state.counter.count
+export default connect((state: CounterState) => ({
+    // 'determineCount' is the name given to the default export of: redux/counter/reducer.ts
+    // ... when imported into the module: redux/index.ts
+    // ... into counterReducer.
+    count: state.determineCount
 }), (dispatch) => ({
     increment: () => dispatch(CounterActions.increment()),
     decrement: () => dispatch(CounterActions.decrement())
