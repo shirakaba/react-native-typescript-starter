@@ -20,4 +20,4 @@ export default class Button extends Component<Props, {}> {
 const styles = StyleSheet.create({
     button: { padding: 5, margin: 2, width: 150, height: 80, justifyContent: 'center', alignItems: 'center' },
     text: { fontSize: 28 }
-})
+});
