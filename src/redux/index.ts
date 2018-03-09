@@ -4,6 +4,7 @@ import determineCount, {CountType} from './counter/reducer';
 import {CounterAction} from "./counter/actions";
 
 // https://github.com/piotrwitek/react-redux-typescript-guide#typing-reducer
+// https://github.com/piotrwitek/react-redux-typescript-webpack-starter
 
 export type CounterState = {
     readonly determineCount: CountType;
